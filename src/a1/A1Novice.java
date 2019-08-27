@@ -7,8 +7,51 @@ public class A1Novice {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-
-		// Your code follows here.
 		
+		int count = scan.nextInt();
+		
+		String[] firstNames = new String[count];
+		
+		String[] lastNames = new String[count];
+		
+		int[] itemsEach = new int[count];
+		
+		double[] customerTotals = new double[count];
+		
+		// inputs first name, last name, items into separate arrays based on count
+		
+		for(int i = 0; i < count; i++) {
+			
+			firstNames[i] = scan.next();
+			
+			lastNames[i] = scan.next();
+			
+			itemsEach[i] = scan.nextInt();
+			
+			// for loop to calculate customers totals based on itemsEach
+			
+			for(int j = 0; j < itemsEach[i]; j++) {
+				
+				int quantity = scan.nextInt();
+				
+				String item = scan.next(); // skips over item name
+				
+				double price = scan.nextDouble();
+				
+				customerTotals[i] += quantity * price;
+				
+			}
+			
+			// prints formatted names and totals 
+			
+			System.out.println(firstNames[i].charAt(0) + ". " + lastNames[i] + ": " + customerTotals[i]);
+		}
+		
+		
+		
+		
+
+	
+		scan.close();
 	}
 }
