@@ -18,6 +18,8 @@ public class A1Novice {
 		
 		double[] customerTotals = new double[count];
 		
+		String[] customerTotalsString = new String[count];
+		
 		// inputs first name, last name, items into separate arrays based on count
 		
 		for(int i = 0; i < count; i++) {
@@ -41,10 +43,11 @@ public class A1Novice {
 				customerTotals[i] += quantity * price;
 				
 			}
+			customerTotalsString[i] = String.format("%.2f", customerTotals[i]);
 			
 			// prints formatted names and totals 
 			
-			System.out.println(firstNames[i].charAt(0) + ". " + lastNames[i] + ": " + customerTotals[i]);
+			System.out.println(firstNames[i].charAt(0) + ". " + lastNames[i] + ": " + customerTotalsString[i]);
 		}
 		
 		
