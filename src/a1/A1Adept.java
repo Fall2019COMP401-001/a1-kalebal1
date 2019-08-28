@@ -53,7 +53,6 @@ public class A1Adept {
 				customerTotal[i] += findItemTotal(quan, findPlace(name, items), prices);
 				
 			}
-			
 		}
 		
 		int biggest = findTotalMax(customerTotal);
@@ -66,8 +65,8 @@ public class A1Adept {
 		String avgSt = String.format("%.2f", avg);
 		
 		
-		System.out.println("Biggest: " + firstNames[biggest] + lastNames[biggest] + " (" + big + ")");
-		System.out.println("Smallest: " + firstNames[smallest] + lastNames[smallest] + " " + small + ")");
+		System.out.println("Biggest: " + firstNames[biggest] + " " + lastNames[biggest] + " (" + big + ")");
+		System.out.println("Smallest: " + firstNames[smallest] + " " + lastNames[smallest] + " (" + small + ")");
 		System.out.println("Average: " + avgSt);
 		
 		
@@ -119,25 +118,29 @@ public class A1Adept {
 	 */
 	
 	static int findTotalMax(double[] totals) {
-		int curMax = 0;
+		double curMax = 0;
+		int maxLoc = 0;
 		// starts on second value and compares to current
 		for (int i = 1; i < totals.length; i++) {
 			if(totals[i] > curMax) {
-				curMax = i;
+				curMax = totals[i];
+				maxLoc = i;
 			}
 		}
-		return curMax;
+		return maxLoc;
 	}
 	
 	static int findTotalMin(double[] totals) {
-		int curMin = 0;
+		double curMin = totals[findTotalMax(totals)];
+		int minLoc = 0;
 		
-		for (int i = 1; i < totals.length; i++) {
+		for (int i = 0; i < totals.length; i++) {
 			if(totals[i] < curMin) {
-				curMin = i;
+				curMin = totals[i];
+				minLoc = i;
 			}
 		}
-		return curMin;
+		return minLoc;
 	}
 	
 	/*
