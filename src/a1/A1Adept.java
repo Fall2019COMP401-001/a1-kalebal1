@@ -66,8 +66,8 @@ public class A1Adept {
 		String avgSt = String.format("%.2f", avg);
 		
 		
-		System.out.println("Biggest: " + firstNames[biggest] + lastNames[biggest] + big);
-		System.out.println("Smallest: " + firstNames[smallest] + lastNames[smallest] + small);
+		System.out.println("Biggest: " + firstNames[biggest] + lastNames[biggest] + " (" + big + ")");
+		System.out.println("Smallest: " + firstNames[smallest] + lastNames[smallest] + " " + small + ")");
 		System.out.println("Average: " + avgSt);
 		
 		
