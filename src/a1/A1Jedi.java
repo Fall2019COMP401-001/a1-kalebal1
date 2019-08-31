@@ -35,7 +35,6 @@ public class A1Jedi {
 //		Customer Info
 		
 		int customerCount = scan.nextInt();
-		System.out.println(customerCount);
 		
 		// 2D array, a column for every item and a row for each customer
 		int [][] itemsBought = new int [items.length][customerCount];
@@ -44,34 +43,28 @@ public class A1Jedi {
 		int [] customerItemCount = new int[items.length];
 	
 		for (int i = 0; i < customerCount; i++) {
-			System.out.println("customer loop - i = " + i);
 			
 			// adds names to separate arrays 
 			firstNames[i] = scan.next();
 			lastNames[i] = scan.next();
-			System.out.println(firstNames[i] + " " + lastNames[i]);
 			
 			//creates counter for number of different items customer bought
 			int cItems = scan.nextInt();
 			
 			// loops through number of customer items 
-			
-			for (int j = 0; j < cItems; j++) {
-				System.out.println("item loop - j = " + j);
+			for(int j = 0; j < cItems; j++) {
 				int localQuan = scan.nextInt();
 				String itemName = scan.next();
 				
 				
-				itemsBought [findPlace(itemName, items)][i] += localQuan;
+				itemsBought [findPlace(itemName, items)][j] += localQuan;
 				customerItemCount[findPlace(itemName, items)] += localQuan;
-				System.out.println(firstNames[i] + " bought " + localQuan + " " + itemName);
-				System.out.println(itemName + " " + itemsBought[findPlace(itemName, items)][i]);
 			
 				
 			}
+		}
 			
 			
-			}
 		int[] itmBCust = new int[items.length];
 		quanCust(itemsBought, customerCount, items.length, itmBCust);
 		int[] quanBItem = new int[items.length];
@@ -83,7 +76,7 @@ public class A1Jedi {
 				System.out.println(itmBCust[i] + " customers bought " + quanBItem[i] + " " + items[i]);
 			}
 		}
-		
+
 
 		
 		
@@ -133,6 +126,7 @@ public class A1Jedi {
 	 * calculates total quantity of an item bought across all customers
 	 * 
 	 */
+	
 	static int[] totalBought(int[][] arr, int customerCount, int numItems, int[] input) {
 		int [] total = input;
 		for(int j = 0; j < customerCount; j++) {
