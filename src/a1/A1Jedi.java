@@ -46,18 +46,17 @@ public class A1Jedi {
 			
 			// adds names to separate arrays 
 			firstNames[i] = scan.next();
-			System.out.println(firstNames[i]);
+		
 			lastNames[i] = scan.next();
 			
 			//creates counter for number of different items customer bought
 			int cItems = scan.nextInt();
-			System.out.println("cItems = " + cItems);
+		
 			
 			// loops through number of customer items 
 			for(int j = 0; j < cItems; j++) {
 				int localQuan = scan.nextInt();
 				String itemName = scan.next();
-				System.out.println("itemName = " + itemName);
 				
 				
 				itemsBought [findPlace(itemName, items)][i] += localQuan;
